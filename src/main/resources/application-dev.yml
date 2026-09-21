@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: SlotBooker
+  datasource:
+    url: ${PG_URL_DEV}
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: validate # Only validate the db schema
+      properties:
+        hibernate:
+          format_sql: true
+    flyway:
+      enabled: true
+      default-schema: public
+      locations: classpath:db/migration
+      validate-on-migrate: false
+  web:
+    error:
+      whitelabel:
+        enabled: false
+
+server:
+  port: ${SERVER_PORT:8080}
+
+logging:
+  level:
+    org.hibernate: DEBUG
+    org.springframework.security: DEBUG
+
+# Configurações personalizadas da aplicação
+api:
+  uri: /api/v1
+
+# Actuator para monitoramento e debug (Desenvolvimento)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env,beans,mappings
+  endpoint:
+    health:
+      show-details: always
