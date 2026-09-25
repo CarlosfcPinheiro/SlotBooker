@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS tb_booking (
     status VARCHAR(30) NOT NULL,
     notes TEXT,
     service_item_id UUID NOT NULL REFERENCES tb_service_item(id) ON DELETE CASCADE,
-    provider_id UUID NOT NULL REFERENCES tb_usuario(id) ON DELETE CASCADE,
+    provider_id UUID NOT NULL REFERENCES tb_user(id) ON DELETE CASCADE,
     created_at TIMESTAMP(3) DEFAULT now(),
     updated_at TIMESTAMP(3) DEFAULT now(),
 

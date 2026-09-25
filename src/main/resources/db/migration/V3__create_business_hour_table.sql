@@ -3,5 +3,5 @@ CREATE TABLE IF NOT EXISTS tb_business_hour (
     day_of_week INT NOT NULL,
     open_time TIME NOT NULL,
     close_time TIME NOT NULL,
-    provider_id UUID NOT NULL REFERENCES tb_usuario(id) ON DELETE CASCADE
+    provider_id UUID NOT NULL REFERENCES tb_user(id) ON DELETE CASCADE
 )

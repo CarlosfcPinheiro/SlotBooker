@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS tb_usuario (
+CREATE TABLE IF NOT EXISTS tb_user (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(100) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,

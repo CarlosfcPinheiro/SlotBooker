@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS tb_service_item (
     description VARCHAR(255),
     price NUMERIC(10, 2) NOT NULL,
     duration_minutes INT NOT NULL,
-    provider_id UUID NOT NULL REFERENCES tb_usuario(id) ON DELETE CASCADE,
+    provider_id UUID NOT NULL REFERENCES tb_user(id) ON DELETE CASCADE,
     active BOOLEAN NOT NULL DEFAULT true,
     created_at TIMESTAMP(3) DEFAULT now(),
     updated_at TIMESTAMP(3) DEFAULT now(),
