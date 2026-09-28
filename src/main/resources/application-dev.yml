@@ -31,6 +31,9 @@ logging:
 # Configurações personalizadas da aplicação
 api:
   uri: /api/v1
+  jwt:
+    secret: ${JWT_SECRET}
+    expirationTimeInSeconds: ${JWT_EXPIRATION_TIME_IN_SECONDS:3600}
 
 # Actuator para monitoramento e debug (Desenvolvimento)
 management:
@@ -41,3 +44,9 @@ management:
   endpoint:
     health:
       show-details: always
+
+springdoc:
+  api-docs:
+    enabled: ${ENABLE_DOCS:true}
+  swagger-ui:
+    enabled: ${ENABLE_DOCS:true}

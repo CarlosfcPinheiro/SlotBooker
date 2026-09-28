@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -21,6 +22,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "tb_user")
+@EntityListeners(AuditingEntityListener.class)
 public class User implements UserDetails {
     @Id
     @GeneratedValue(generator = "UUID", strategy = GenerationType.IDENTITY)
@@ -43,7 +45,7 @@ public class User implements UserDetails {
     private Role role;
 
     @CreatedDate
-    @Column(name = "created_at", updatable = false, nullable = false)
+    @Column(name = "created_at", updatable = false)
     private Instant createdAt;
 
     @LastModifiedDate

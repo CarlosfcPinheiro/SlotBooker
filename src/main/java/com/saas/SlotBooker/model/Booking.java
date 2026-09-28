@@ -42,7 +42,7 @@ public class Booking {
     private String notes;
 
     @CreatedDate
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", updatable = false)
     private Instant createdAt;
 
     @LastModifiedDate
